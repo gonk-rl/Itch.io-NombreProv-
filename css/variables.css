@@ -1,0 +1,77 @@
+/* Fuentes */
+:root {
+  --font-heading: 'Sansation', sans-serif;
+  --font-body: 'Roboto', sans-serif;
+
+  /* Pesos */
+  --weight-regular: 400;
+  --weight-bold: 700;
+
+  /* Colores */
+  --color-bg: #0c0c0f;
+  --color-surface: #131318;
+  --color-surface-raised: #1c1c22;
+  --color-sidebar: #08080a;
+  --color-hero: #4a0d12;
+  --color-border: #24242c;
+  --color-border-strong: #33333d;
+  --color-text: #ffffff;
+  --color-text-muted: #a9a9b4;
+  --color-primary: #8f2a1a;
+  --color-primary-hover: #a8321f;
+  --color-accent: #6f8cff;
+  --color-overlay: rgba(8, 8, 10, 0.55);
+  --color-panel: rgba(19, 19, 24, 0.94);
+
+  /* Escala de espaciado (base 8px) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  /* Escala tipográfica */
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-md: 16px;
+  --text-lg: 20px;
+  --text-xl: 24px;
+  --text-2xl: 32px;
+  --text-3xl: 48px;
+  --leading-body: 1.5;
+  --tracking-wide: 0.08em;
+
+  /* Bordes y radios */
+  --border-width: 1px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 999px;
+
+  /* Medidas de layout */
+  --sidebar-width: 56px;
+  --content-max: 1200px;
+  --hero-height: 220px;
+  --panel-width-sm: 280px;
+  --panel-width-md: 520px;
+  --panel-width-lg: 760px;
+  --panel-max-height: calc(100vh - var(--space-5) * 2);
+  --settings-nav-width: 180px;
+  --card-min: 170px;
+  --ratio-cover: 4 / 3;
+  --thumb-size: 56px;
+  --avatar-size: 36px;
+  --control-height: 40px;
+  --icon-size: 22px;
+  --icon-stroke: 1.75;
+
+  /* Efectos */
+  --blur: 10px;
+  --transition: 160ms ease;
+  --z-sidebar: 20;
+  --z-backdrop: 30;
+  --z-panel: 40;
+}
