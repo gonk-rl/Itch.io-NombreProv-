@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indie games</title>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Sansation:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Iconos -->
+  <svg class="sprite" aria-hidden="true">
+    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></symbol>
+    <symbol id="icon-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+    <symbol id="icon-sliders" viewBox="0 0 24 24"><path d="M21 4h-7M10 4H3M21 12h-9M8 12H3M21 20h-5M12 20H3M14 2v4M8 10v4M16 18v4"/></symbol>
+    <symbol id="icon-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  </svg>
+
+  <!-- Sidebar -->
+  <nav class="sidebar" aria-label="Principal">
+    <div class="sidebar__group">
+      <a class="sidebar__logo" href="index.html">LOGO</a>
+      <button class="sidebar__btn" type="button" data-panel-target="panel-busqueda" aria-expanded="false" aria-label="Buscar">
+        <svg class="icon"><use href="#icon-search"/></svg>
+      </button>
+      <button class="sidebar__btn" type="button" data-panel-target="panel-categorias" aria-expanded="false" aria-label="Categorías">
+        <svg class="icon icon--open"><use href="#icon-grid"/></svg>
+        <svg class="icon icon--close"><use href="#icon-close"/></svg>
+      </button>
+    </div>
+    <div class="sidebar__group">
+      <button class="sidebar__btn" type="button" data-panel-target="panel-config" aria-expanded="false" aria-label="Configuración">
+        <svg class="icon"><use href="#icon-sliders"/></svg>
+      </button>
+      <button class="sidebar__btn" type="button" data-panel-target="panel-usuario" aria-expanded="false" aria-label="Usuario">
+        <svg class="icon"><use href="#icon-user"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Fondo difuminado -->
+  <div class="backdrop" id="backdrop"></div>
+
+  <!-- Panel de busqueda -->
+  <section class="panel panel--top panel--md" id="panel-busqueda" aria-label="Buscar juegos" aria-hidden="true">
+    <header class="panel__header">
+      <input class="input" type="search" id="input-busqueda" placeholder="Buscar juegos" aria-label="Buscar juegos" autocomplete="off">
+    </header>
+    <div class="panel__body">
+      <p class="panel__subtitle" id="titulo-resultados">Escribí para buscar</p>
+      <ul class="search-results" id="resultados"></ul>
+    </div>
+  </section>
+
+  <!-- Panel de categorias -->
+  <section class="panel panel--top panel--md" id="panel-categorias" aria-label="Categorías" aria-hidden="true">
+    <header class="panel__header">
+      <h2 class="panel__title">Categorías</h2>
+    </header>
+    <div class="panel__body">
+      <div class="category-list" id="lista-categorias"></div>
+    </div>
+    <footer class="panel__footer">
+      <span class="panel__count" id="contador-juegos" aria-label="Juegos que cumplen los filtros">0</span>
+      <a class="btn btn--primary" id="btn-explorar" href="explorar.html">Explorar</a>
+    </footer>
+  </section>
+
+  <!-- Panel de configuracion -->
+  <section class="panel panel--bottom panel--lg" id="panel-config" aria-label="Configuración" aria-hidden="true">
+    <header class="panel__header">
+      <input class="input" type="search" id="input-config" placeholder="Buscar configuración" aria-label="Buscar configuración" autocomplete="off">
+    </header>
+    <div class="settings">
+      <nav class="settings__nav" aria-label="Secciones de configuración">
+        <button class="settings__link" type="button" data-seccion="cuenta" aria-current="true">Cuenta</button>
+        <button class="settings__link" type="button" data-seccion="apariencia">Apariencia</button>
+        <button class="settings__link" type="button" data-seccion="notificaciones">Notificaciones</button>
+      </nav>
+      <div class="settings__content panel__body">
+        <section class="settings__section" data-seccion="cuenta">
+          <h3 class="settings__title">Cuenta</h3>
+          <div class="setting">
+            <label class="setting__label" for="cfg-usuario">Nombre de usuario</label>
+            <p class="setting__desc">Así te ven los demás en tu perfil.</p>
+            <input class="input" type="text" id="cfg-usuario" placeholder="yo">
+          </div>
+          <div class="setting">
+            <label class="setting__label" for="cfg-correo">Correo electrónico</label>
+            <p class="setting__desc">Lo usamos para recuperar tu cuenta.</p>
+            <input class="input" type="email" id="cfg-correo" placeholder="nombre@correo.com">
+          </div>
+        </section>
+        <section class="settings__section" data-seccion="apariencia" hidden>
+          <h3 class="settings__title">Apariencia</h3>
+          <div class="setting">
+            <span class="setting__label">Animaciones</span>
+            <p class="setting__desc">Desactiva las transiciones de la página.</p>
+            <label class="checkbox"><input class="checkbox__input" type="checkbox" id="cfg-animaciones">Reducir animaciones</label>
+          </div>
+          <div class="setting">
+            <span class="setting__label">Cards de juegos</span>
+            <p class="setting__desc">Elegí qué información mostrar.</p>
+            <label class="checkbox"><input class="checkbox__input" type="checkbox" checked>Mostrar el autor</label>
+          </div>
+        </section>
+        <section class="settings__section" data-seccion="notificaciones" hidden>
+          <h3 class="settings__title">Notificaciones</h3>
+          <div class="setting">
+            <span class="setting__label">Novedades</span>
+            <p class="setting__desc">Avisos de juegos nuevos en tus categorías.</p>
+            <label class="checkbox"><input class="checkbox__input" type="checkbox" checked>Recibir novedades</label>
+          </div>
+          <div class="setting">
+            <span class="setting__label">Correo</span>
+            <p class="setting__desc">Resumen semanal en tu bandeja de entrada.</p>
+            <label class="checkbox"><input class="checkbox__input" type="checkbox">Recibir resumen por correo</label>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <!-- Panel de usuario -->
+  <section class="panel panel--bottom panel--sm" id="panel-usuario" aria-label="Usuario" aria-hidden="true">
+    <div class="user-menu" id="menu-usuario" hidden>
+      <div class="user-menu__header">
+        <span class="user-menu__avatar">Y</span>
+        <span>yo</span>
+      </div>
+      <button class="user-menu__link" type="button" data-panel-target="panel-config">Configuración</button>
+      <a class="user-menu__link" href="#">Lista de deseos</a>
+      <a class="user-menu__link" href="#">Contribuciones</a>
+      <button class="user-menu__link user-menu__link--muted" type="button" data-accion="cerrar-sesion">Cerrar sesión</button>
+    </div>
+    <div class="user-menu" id="menu-invitado">
+      <button class="btn btn--primary btn--block" type="button" data-accion="iniciar-sesion">Iniciar sesión</button>
+      <button class="btn btn--block" type="button">Registrarse</button>
+    </div>
+  </section>
+
+  <!-- Contenido -->
+  <main class="layout">
+    <header class="hero">
+      <h1 class="hero__title">Logo</h1>
+      <p class="hero__subtitle">home of indie games</p>
+    </header>
+
+    <!-- Las secciones se generan desde script.js (ver SECCIONES) -->
+    <div class="home" id="home"></div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

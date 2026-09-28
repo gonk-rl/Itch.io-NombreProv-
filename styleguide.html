@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Styleguide</title>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Sansation:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main class="styleguide">
+
+    <header>
+      <h1>Styleguide</h1>
+      <p class="styleguide__note">Referencia del sistema de diseño. Todo sale de <code>variables.css</code>.</p>
+    </header>
+
+    <!-- Paleta -->
+    <section class="styleguide__section">
+      <h2>Paleta</h2>
+      <div class="swatches">
+        <div><div class="swatch__color swatch__color--bg"></div><p class="swatch__name">--color-bg</p></div>
+        <div><div class="swatch__color swatch__color--surface"></div><p class="swatch__name">--color-surface</p></div>
+        <div><div class="swatch__color swatch__color--raised"></div><p class="swatch__name">--color-surface-raised</p></div>
+        <div><div class="swatch__color swatch__color--sidebar"></div><p class="swatch__name">--color-sidebar</p></div>
+        <div><div class="swatch__color swatch__color--hero"></div><p class="swatch__name">--color-hero</p></div>
+        <div><div class="swatch__color swatch__color--border"></div><p class="swatch__name">--color-border-strong</p></div>
+        <div><div class="swatch__color swatch__color--text"></div><p class="swatch__name">--color-text</p></div>
+        <div><div class="swatch__color swatch__color--muted"></div><p class="swatch__name">--color-text-muted</p></div>
+        <div><div class="swatch__color swatch__color--primary"></div><p class="swatch__name">--color-primary</p></div>
+        <div><div class="swatch__color swatch__color--primary-hover"></div><p class="swatch__name">--color-primary-hover</p></div>
+        <div><div class="swatch__color swatch__color--accent"></div><p class="swatch__name">--color-accent</p></div>
+      </div>
+    </section>
+
+    <!-- Tipografia -->
+    <section class="styleguide__section">
+      <h2>Tipografía</h2>
+      <p class="styleguide__note">Títulos: Sansation (--font-heading). Texto: Roboto (--font-body). Pesos 400 y 700.</p>
+      <h1>Título 1</h1>
+      <h2>Título 2</h2>
+      <h3>Título 3</h3>
+      <p>Párrafo de texto. Un juego indie descargable, gratis y hecho por una persona o un estudio pequeño.</p>
+      <p class="styleguide__note">Texto secundario con --color-text-muted.</p>
+    </section>
+
+    <!-- Espaciados -->
+    <section class="styleguide__section">
+      <h2>Espaciados</h2>
+      <div class="space-demo"><span class="space-demo__label">space-1</span><span class="space-demo__bar space-demo__bar--1"></span></div>
+      <div class="space-demo"><span class="space-demo__label">space-2</span><span class="space-demo__bar space-demo__bar--2"></span></div>
+      <div class="space-demo"><span class="space-demo__label">space-3</span><span class="space-demo__bar space-demo__bar--3"></span></div>
+      <div class="space-demo"><span class="space-demo__label">space-4</span><span class="space-demo__bar space-demo__bar--4"></span></div>
+      <div class="space-demo"><span class="space-demo__label">space-5</span><span class="space-demo__bar space-demo__bar--5"></span></div>
+      <div class="space-demo"><span class="space-demo__label">space-6</span><span class="space-demo__bar space-demo__bar--6"></span></div>
+      <div class="space-demo"><span class="space-demo__label">space-7</span><span class="space-demo__bar space-demo__bar--7"></span></div>
+      <div class="space-demo"><span class="space-demo__label">space-8</span><span class="space-demo__bar space-demo__bar--8"></span></div>
+    </section>
+
+    <!-- Botones -->
+    <section class="styleguide__section">
+      <h2>Botones</h2>
+      <div class="styleguide__row">
+        <button class="btn" type="button">Normal</button>
+        <button class="btn btn--primary" type="button">Primario</button>
+        <button class="btn" type="button" disabled>Deshabilitado</button>
+        <button class="btn btn--primary" type="button" disabled>Primario deshabilitado</button>
+      </div>
+      <p class="styleguide__note">Pasá el mouse o usá Tab para ver hover y focus.</p>
+    </section>
+
+    <!-- Inputs y checkbox -->
+    <section class="styleguide__section">
+      <h2>Input y checkbox</h2>
+      <div class="styleguide__demo--panel">
+        <input class="input" type="text" placeholder="Input normal" aria-label="Input normal">
+      </div>
+      <div class="styleguide__demo--panel">
+        <input class="input" type="text" placeholder="Input deshabilitado" aria-label="Input deshabilitado" disabled>
+      </div>
+      <div class="styleguide__row">
+        <label class="checkbox"><input class="checkbox__input" type="checkbox" checked>Marcado</label>
+        <label class="checkbox"><input class="checkbox__input" type="checkbox">Sin marcar</label>
+      </div>
+    </section>
+
+    <!-- Etiquetas -->
+    <section class="styleguide__section">
+      <h2>Etiquetas</h2>
+      <div class="styleguide__row">
+        <span class="tag">Acción</span>
+        <span class="tag tag--free">Gratis</span>
+      </div>
+    </section>
+
+    <!-- Card de juego -->
+    <section class="styleguide__section">
+      <h2>Card de juego</h2>
+      <div class="styleguide__row">
+        <a class="game-card styleguide__demo" href="#">
+          <div class="game-card__cover"></div>
+          <div class="game-card__body">
+            <h3 class="game-card__title">Nombre del juego</h3>
+            <p class="game-card__author">Estudio</p>
+            <div class="game-card__footer">
+              <span class="tag">Aventura</span>
+              <span class="tag tag--free">Gratis</span>
+            </div>
+          </div>
+        </a>
+      </div>
+      <p class="styleguide__note">La card se repite cambiando solo el contenido interno.</p>
+    </section>
+
+    <!-- Categorias y resultados -->
+    <section class="styleguide__section">
+      <h2>Categoría y resultado de búsqueda</h2>
+      <div class="styleguide__demo--wide">
+        <button class="category-list__item" type="button" aria-pressed="false">Categoría normal</button>
+        <button class="category-list__item" type="button" aria-pressed="true">Categoría marcada</button>
+      </div>
+      <div class="styleguide__demo--panel">
+        <a class="result" href="#">
+          <span class="result__thumb"></span>
+          <span class="result__info">
+            <span class="result__title">Nombre del juego</span>
+            <span class="result__meta">Estudio - Aventura</span>
+          </span>
+          <span class="tag tag--free">Gratis</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Ajuste de configuracion -->
+    <section class="styleguide__section">
+      <h2>Ajuste de configuración</h2>
+      <div class="setting styleguide__demo--panel">
+        <label class="setting__label" for="sg-ajuste">Nombre de usuario</label>
+        <p class="setting__desc">Así te ven los demás en tu perfil.</p>
+        <input class="input" type="text" id="sg-ajuste" placeholder="yo">
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
